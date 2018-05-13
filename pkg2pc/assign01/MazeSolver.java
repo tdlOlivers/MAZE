@@ -143,7 +143,7 @@ public class MazeSolver {
         // Finds thread ID of final spot
         for(SpotInfo var : spotList){
             if(var.getX() == maze.getN() && var.getY() == maze.getN()){
-                temp = new SpotInfo(var.getMain(), var.getSub(), var.getX(), var.getY());
+                temp = var;
                 drawSolution(temp.getX(), temp.getY());
                 spotList.remove(var);
                 break;
@@ -153,7 +153,7 @@ public class MazeSolver {
         while(true){
             for(SpotInfo var : spotList){
                 if(var.getSub().equals(temp.getMain())){
-                    temp = new SpotInfo(var.getMain(), var.getSub(), var.getX(), var.getY());
+                    temp = var;
                     drawSolution(temp.getX(), temp.getY());
                     spotList.remove(var);
                     break;
